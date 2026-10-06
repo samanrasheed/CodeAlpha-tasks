@@ -1,209 +1,208 @@
-# Unemployment Analysis with Python
+# Data Science Internship Projects
 
-## Project Overview
+This repository contains the data science projects completed during my Data Science Internship. The projects cover machine learning, exploratory data analysis, data preprocessing, visualization, and statistical analysis using Python.
 
-This project performs exploratory data analysis on unemployment data from India to investigate **regional and temporal patterns in unemployment rates**, with particular attention to the changes observed around the COVID-19 period.
+---
 
-The analysis uses Python, Pandas, Matplotlib, Seaborn, and Jupyter Notebook to clean the data, explore trends, create visualizations, and compare unemployment rates between Pre-COVID and Post-COVID periods.
+##  Projects
 
-## Objective
+### 1. Iris Flower Classification
 
-The main objectives of this project are:
+A machine learning classification project using the Iris dataset to predict the species of an iris flower based on its sepal and petal measurements.
 
-* Clean and prepare the unemployment dataset.
-* Analyze regional differences in unemployment.
-* Study month-wise unemployment trends.
-* Examine unemployment rates over time for selected regions.
-* Identify the regions with the highest average unemployment rates.
-* Analyze correlations between unemployment, employment, and labour participation.
-* Compare Pre-COVID and Post-COVID unemployment rates.
+####  Objective
 
-## Dataset
+The objective of this project is to build and evaluate machine learning models that can classify iris flowers into three species:
 
-The dataset contains information about unemployment across different regions of India.
+- Setosa
+- Versicolor
+- Virginica
+
+####  Dataset
+
+The Iris dataset is provided by Scikit-learn and contains:
+
+- 150 observations
+- 4 numerical features
+
+Features:
+
+- Sepal Length
+- Sepal Width
+- Petal Length
+- Petal Width
+
+Target:
+
+- Iris Species
+
+####  Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Jupyter Notebook
+
+####  Project Workflow
+
+1. Load the Iris dataset
+2. Create a Pandas DataFrame
+3. Perform exploratory data analysis
+4. Check data types and missing values
+5. Visualize feature relationships
+6. Analyze feature distributions
+7. Split data into training and testing sets
+8. Apply feature scaling for KNN
+9. Train machine learning models
+10. Evaluate model performance
+11. Compare the models using accuracy and confusion matrices
+
+####  Machine Learning Models
+
+Two classification algorithms were used:
+
+- Logistic Regression
+- K-Nearest Neighbors (KNN)
+
+####  Results
+
+| Model | Accuracy |
+|-------|----------|
+| Logistic Regression | 96.67% |
+| K-Nearest Neighbors | 100% |
+
+KNN achieved the highest accuracy on the evaluated test split, correctly classifying all 30 test observations.
+
+Logistic Regression achieved approximately 96.67% accuracy, with one Versicolor sample classified as Virginica.
+
+####  Key Insights
+
+- Petal length and petal width were highly useful for distinguishing between species.
+- Setosa was clearly separated from the other two species.
+- Versicolor and Virginica showed some overlap.
+- KNN performed slightly better than Logistic Regression on the evaluated test set.
+
+####  Project File
+
+`Iris-Flower-Classification/Iris_Flower_Classification.ipynb`
+
+---
+
+# 2. Unemployment Analysis with Python
+
+An exploratory data analysis project focused on analyzing unemployment trends in different regions of India and understanding changes in unemployment before and after the COVID-19 period.
+
+####  Objective
+
+The objective of this project is to analyze unemployment patterns across Indian states and regions, identify temporal trends, and compare unemployment levels before and after COVID-19.
+
+####  Dataset
+
+The dataset contains unemployment-related information for different regions of India.
 
 Main columns include:
 
-* `Region`
-* `Date`
-* `Frequency`
-* `Estimated Unemployment Rate (%)`
-* `Estimated Employed`
-* `Estimated Labour Participation Rate (%)`
-* `Area`
+- Region
+- Date
+- Frequency
+- Estimated Unemployment Rate (%)
+- Estimated Employed
+- Estimated Labour Participation Rate (%)
+- Area
 
-After cleaning, the dataset contained **740 observations** and **9 columns**, including the additional `Month` and `Period` analysis columns.
+Additional features were created during analysis:
 
-## Technologies Used
+- Month
+- Period
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Jupyter Notebook
+####  Technologies Used
 
-## Data Cleaning
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
+
+####  Data Cleaning
 
 The following preprocessing steps were performed:
 
-* Checked dataset shape and structure.
-* Checked for missing values.
-* Converted the `Date` column to datetime format.
-* Converted numerical columns to appropriate numeric data types.
-* Filled missing numerical values using the median.
-* Filled missing categorical values using the mode.
-* Removed rows where the date was unavailable.
-* Created a `Month` column for monthly analysis.
-* Created a `Period` column to distinguish Pre-COVID and Post-COVID observations.
+- Checked for missing values
+- Converted the Date column into datetime format
+- Converted numerical columns into appropriate numeric data types
+- Filled missing numerical values using median values
+- Filled missing categorical values using the mode
+- Removed rows with invalid dates
+- Created Month and Period features
+- Verified the final dataset for missing values
 
-After cleaning, the dataset contained no missing values.
+####  Exploratory Data Analysis
 
-## Exploratory Data Analysis
+The following analyses were performed:
 
-### 1. Region-wise Average Unemployment
+### Regional Unemployment Analysis
 
-The average unemployment rate was calculated for each region to identify regional differences in unemployment.
+Calculated the average unemployment rate for each region and identified regions with higher unemployment rates.
 
-A bar chart was created to compare average unemployment rates across regions.
+### Monthly Unemployment Analysis
 
-### 2. Month-wise Unemployment Trends
+Calculated the average unemployment rate for each month to identify seasonal patterns.
 
-Monthly average unemployment rates were calculated to identify changes throughout the year.
+April had the highest average unemployment rate at approximately 23.64%, followed by May at approximately 16.65%.
 
-The analysis showed particularly high average unemployment rates in:
+### Time-Series Analysis
 
-* **April: 23.64%**
-* **May: 16.65%**
+Unemployment trends were visualized over time for selected regions, including:
 
-Other months generally had lower average unemployment rates.
+- Punjab
+- Maharashtra
+- West Bengal
 
-### 3. Regional Time-Series Analysis
+### Top 10 Regions
 
-A time-series line chart was created for:
+The top 10 regions with the highest average unemployment rates were identified and visualized.
 
-* Punjab
-* Maharashtra
-* West Bengal
+### Correlation Analysis
 
-The chart shows how unemployment rates changed over time and demonstrates that unemployment patterns varied between regions.
+A correlation matrix was created to analyze relationships between:
 
-### 4. Top 10 Regions
+- Estimated Unemployment Rate
+- Estimated Employed
+- Labour Participation Rate
 
-The top 10 regions with the highest average unemployment rates were identified using regional averages.
+The unemployment rate showed a weak negative correlation with estimated employment, while the relationship with labour participation was close to zero.
 
-A bar chart was created to visualize these regions.
+### COVID-19 Analysis
 
-### 5. Correlation Analysis
+The dataset was divided into:
 
-A correlation heatmap was created for:
+- Pre-COVID
+- Post-COVID
 
-* Estimated Unemployment Rate
-* Estimated Employed
-* Estimated Labour Participation Rate
+The average unemployment rates were:
 
-Important correlations observed in the dataset included:
+| Period | Average Unemployment Rate |
+|--------|---------------------------|
+| Pre-COVID | 9.51% |
+| Post-COVID | 17.77% |
 
-| Variables                                      | Correlation |
-| ---------------------------------------------- | ----------: |
-| Unemployment Rate ↔ Estimated Employed         |       -0.22 |
-| Unemployment Rate ↔ Labour Participation Rate  |       ~0.00 |
-| Estimated Employed ↔ Labour Participation Rate |        0.01 |
+The analysis shows an increase of approximately 8.26 percentage points in the average unemployment rate during the post-COVID period.
 
-The unemployment rate therefore showed a weak negative relationship with estimated employment, while the relationships involving labour participation were very weak.
+####  Key Insights
 
-> Correlation describes association between variables and does not establish causation.
+- Unemployment varied considerably across regions.
+- April and May showed particularly high average unemployment rates.
+- Different regions experienced different unemployment trends over time.
+- The relationship between unemployment and estimated employment was weakly negative.
+- The average unemployment rate was substantially higher in the post-COVID period.
+- These results describe observed patterns and do not by themselves establish causation.
 
-## Pre-COVID vs Post-COVID Analysis
+####  Project File
 
-The data was divided into two periods using **March 2020** as the cutoff:
+`Unemployment-Analysis/Unemployment_Analysis.ipynb`
 
-* Pre-COVID: before March 2020
-* Post-COVID: March 2020 onward
-
-### Results
-
-| Period     | Average Unemployment Rate |
-| ---------- | ------------------------: |
-| Pre-COVID  |                     9.51% |
-| Post-COVID |                    17.77% |
-
-The Post-COVID period had an average unemployment rate approximately **8.26 percentage points higher** than the Pre-COVID period in this dataset.
-
-This comparison shows a substantial change in unemployment rates between the two periods, although the analysis itself does not establish that COVID-19 was the sole cause of the change.
-
-## Visualizations
-
-The project includes:
-
-* Region-wise average unemployment bar chart
-* Month-wise unemployment trend line chart
-* Regional time-series line chart
-* Top 10 regions bar chart
-* Correlation heatmap
-* Pre-COVID vs Post-COVID comparison chart
-
-## Project Workflow
-
-```text
-Load Dataset
-      ↓
-Data Cleaning
-      ↓
-Missing Value Handling
-      ↓
-Date & Data Type Conversion
-      ↓
-Exploratory Data Analysis
-      ↓
-Regional Analysis
-      ↓
-Monthly Trend Analysis
-      ↓
-Time-Series Analysis
-      ↓
-Correlation Analysis
-      ↓
-Pre-COVID vs Post-COVID Analysis
-      ↓
-Conclusions
-```
-
-## How to Run
-
-1. Clone the repository.
-
-```bash
-git clone <your-repository-url>
-```
-
-2. Open Jupyter Notebook.
-
-```bash
-jupyter notebook
-```
-
-3. Open the unemployment analysis notebook.
-
-4. Run the notebook cells sequentially.
-
-## Project Structure
-
-```text
-Unemployment-Analysis/
-│
-├── Unemployment_Analysis.ipynb
-├── unemployment_data.csv
-├── README.md
-└── requirements.txt
-```
-
-## Conclusion
-
-The analysis demonstrates significant regional and temporal variation in unemployment rates across India.
-
-The monthly analysis showed particularly high unemployment rates during April and May. Regional analysis also revealed differences between states and regions.
-
-The Pre-COVID vs Post-COVID comparison showed an increase in the average unemployment rate from approximately **9.51% to 17.77%** in the dataset.
-
-Overall, the project demonstrates how Python-based exploratory data analysis can be used to identify patterns, compare groups, and communicate insights through data visualization.
+---
